@@ -3,8 +3,21 @@ import { NgModule } from '@angular/core';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+
 import { AppComponent } from './app.component';
 
+//require('dotenv').config()
+
+export const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseUrl:"",
+  storageBucket: "",
+  messagingSenderId: "",
+}
 
 @NgModule({
   declarations: [
@@ -12,7 +25,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
