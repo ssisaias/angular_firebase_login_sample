@@ -12,7 +12,8 @@
     </div>
     <div *ngIf="(user | async)?.email" class="row justify-content-center">
       <div class="media">
-        <img src="{{(user | async)?.photoURL}}" alt="a" width="60" class="d-flex mr-3">
+        <img *ngIf="(user | async)?.photoURL" src="{{(user | async)?.photoURL}}" alt="a" width="60" class="d-flex mr-3">
+        <img *ngIf="!(user | async)?.photoURL" src="http://static.tvtropes.org/pmwiki/pub/images/Aang_Official.png" alt="a" width="60" class="d-flex mr-3">
         <div class="media-body">
           <h5 class="mt0">{{(user | async)?.displayName}}</h5>
           <p class="mt-0">{{(user | async)?.email}}</p>
