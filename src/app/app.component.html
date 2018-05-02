@@ -31,14 +31,26 @@
   <div class="row justify-content-center">
     <button (click)="abreEmailLogin = !abreEmailLogin " class="btn btn-block btn-outline-danger">Login com Email</button>
   </div>
+  <div class="row justify-content-center">
+    <button (click)="abreEmailCadastro = !abreEmailCadastro " class="btn btn-block btn-outline-warning">Cadastrar Email</button>
+  </div>
   <br>
   <div *ngIf="abreEmailLogin" class="row justify-content-center">
     <div class="form-group">
-      <input type="email" class="form-control" placeholder="email">
-      <input type="password" class="form-control" placeholder="Senha">
-      <button class="btn btn-block btn-outline-info">Entrar</button>
+      <input type="email" class="form-control" [(ngModel)]="email" placeholder="email">
+      <input type="password" class="form-control" [(ngModel)]="senha" placeholder="Senha">
+      <button (click)="loginEmail()" class="btn btn-block btn-outline-info">Entrar</button>
     </div>
   </div>
 
+  <div *ngIf="abreEmailCadastro" class="row justify-content-center">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="nome" placeholder="nome">
+      <input type="email" class="form-control" [(ngModel)]="email" placeholder="email">
+      <input type="password" class="form-control" [(ngModel)]="senha" placeholder="Senha">
+      <input type="text" class="form-control" [(ngModel)]="urlImagem" placeholder="Imagem">
+      <button (click)="cadastroEmail()" class="btn btn-block btn-outline-info">Cadastrar</button>
+    </div>
+  </div>
 
 </div>

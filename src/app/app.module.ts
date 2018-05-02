@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuthModule} from 'angularfire2/auth';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 
@@ -14,9 +15,9 @@ import { AppComponent } from './app.component';
 export const firebaseConfig = {
   apiKey: "",
   authDomain: "",
-  databaseUrl:"",
+  databaseUrl: "",
   storageBucket: "",
-  messagingSenderId: "",
+  messagingSenderId: ""
 }
 
 @NgModule({
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
